@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "555575013131",
+    "project_id": "apartment-management-main",
+    "storage_bucket": "apartment-management-main.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555575013131:android:b3fe0b36c78264fd03bc0e",
+        "android_client_info": {
+          "package_name": "com.luminaraug.apartment_manager"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBirGuoqwR3F5-Vcwo3qDF2IvKJqZn9xfE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
