@@ -120,7 +120,7 @@ class _AnnouncementFormState extends State<AnnouncementForm> {
     List<String> residentEmails =
         await fetchResidentEmails(); // Fetch emails dynamically
 
-    var url = Uri.parse('http://localhost:8080/announcement');
+    var url = Uri.parse('http://localhost:8080/announcement'); // IP address of the emulator
 
     try {
       final response = await http.post(
