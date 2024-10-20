@@ -6,19 +6,15 @@ import 'package:apartments_manager_main/fetures/bookings/controllers/bookings_co
 import 'package:apartments_manager_main/fetures/dashboard/controllers/dashboard_controller.dart';
 import 'package:apartments_manager_main/fetures/dashboard/widgets/pending_loading_card.dart';
 import 'package:apartments_manager_main/fetures/profile/controllers/user_controller.dart';
-import 'package:apartments_manager_main/fetures/bookings/models/booking_model.dart';
 import 'package:apartments_manager_main/utils/color_constants.dart';
 import 'package:apartments_manager_main/utils/text_style_constatnts.dart';
 import 'package:apartments_manager_main/fetures/payments/screens/pending_payments_screen.dart';
-import 'package:apartments_manager_main/fetures/bookings/screens/booked_resident_detailes_screen.dart';
 import 'package:apartments_manager_main/commens/widgets/custom_dropdown_button.dart';
 import 'package:apartments_manager_main/fetures/dashboard/widgets/date_card.dart';
 import 'package:apartments_manager_main/fetures/dashboard/widgets/going_to_vaccent_card.dart';
 import 'package:apartments_manager_main/fetures/dashboard/widgets/pending_payment_card.dart';
 import 'package:apartments_manager_main/fetures/dashboard/widgets/rooms_vaccent_card.dart';
-import 'package:apartments_manager_main/fetures/dashboard/widgets/upcoming_bookings_card.dart';
 import 'package:apartments_manager_main/fetures/profile/screens/profile_screen.dart';
-import 'package:apartments_manager_main/fetures/dashboard/screens/vacant_beds_screen.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 
@@ -86,7 +82,7 @@ class _DashBoardPageState extends State<DashBoardPage>
           children: [
             Consumer(
               builder: (context, value, child) => Text(
-                "Welcom Back,",
+                "Hello! Welcome Back ",
                 style: TextStyleConstants.homeMainTitle1,
               ),
             ),
@@ -114,7 +110,7 @@ class _DashBoardPageState extends State<DashBoardPage>
               );
             },
             child: Hero(
-              tag: "profile",
+              tag: "Profile",
               child: Container(
                 height: 40,
                 width: 40,
@@ -161,34 +157,11 @@ class _DashBoardPageState extends State<DashBoardPage>
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Consumer<UserController>(
-                      builder: (context, value, child) => SlideTransition(
-                        position: _animation1,
-                        child: RoomVaccentCard(
-                          title: "Beds Vacantnt",
-                          number: value.user?.noOfVacancy.toString() ?? "",
-                          bgColor: ColorConstants.primaryColor,
-                          icon: Icon(
-                            FluentIcons.bed_20_regular,
-                            color: ColorConstants.primaryBlackColor,
-                            size: 26,
-                          ),
-                          onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      const VacantBedsScreen(),
-                                ));
-                          },
-                        ),
-                      ),
-                    ),
                     Consumer<DashboardController>(
                       builder: (context, value, child) => SlideTransition(
                         position: _animation2,
                         child: RoomVaccentCard(
-                          title: "Paymenys penting",
+                          title: "Paymenys pending",
                           isLoading: value.isPaymentsLoading,
                           number: value.rentPendingResidents.length.toString(),
                           bgColor: ColorConstants.secondaryColor3,
@@ -218,7 +191,7 @@ class _DashBoardPageState extends State<DashBoardPage>
               Padding(
                 padding: const EdgeInsets.only(left: 20),
                 child: Text(
-                  "Going to vaccent",
+                  "Going to vaccant Soon!",
                   style: TextStyleConstants.dashboardSubtitle1,
                 ),
               ),
@@ -264,7 +237,7 @@ class _DashBoardPageState extends State<DashBoardPage>
                           position: index % 2 == 0 ? _animation1 : _animation2,
                           child: GoingToVaccentCard(
                               roomNumber: value.roomsGoingtoVacant[index]
-                                      ["RoomNo"]
+                                      ["ApartmentNo"]
                                   .toString(),
                               beadNumber: value.roomsGoingtoVacant[index]
                                       ["Vacancy"]
@@ -278,7 +251,7 @@ class _DashBoardPageState extends State<DashBoardPage>
                       height: 100,
                       child: Center(
                         child: Text(
-                            "No Rooms going to Vacant this ${value.selectedValue}"),
+                            "No units going to Vacant this ${value.selectedValue}"),
                       ),
                     );
                   }
@@ -286,65 +259,6 @@ class _DashBoardPageState extends State<DashBoardPage>
               ),
               const SizedBox(
                 height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
-                child: Text(
-                  "Upcoming Bookings",
-                  style: TextStyleConstants.dashboardSubtitle1,
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              bookingsController.bookingsWithinThisWeek.isEmpty
-                  ? const Center(
-                      child: SizedBox(
-                        height: 50,
-                        child: Center(
-                          child: Text("No Bookings"),
-                        ),
-                      ),
-                    )
-                  : Padding(
-                      padding: const EdgeInsets.only(left: 20),
-                      child: SingleChildScrollView(
-                        scrollDirection: Axis.horizontal,
-                        child: Row(
-                          children: List.generate(
-                              bookingsController.bookingsWithinThisWeek.length,
-                              (index) {
-                            BookingsModel booking = bookingsController
-                                .bookingsWithinThisWeek[index];
-                            return SlideTransition(
-                              position: _animation2,
-                              child: UpcomingBookings(
-                                name: booking.name,
-                                date: DateFormat('dd/MM/yyyy')
-                                    .format(booking.checkIn),
-                                roomNumber: booking.roomNO.toString(),
-                                beadNumber: "5",
-                                isAdvacePaid: booking.advancePaid,
-                                onTap: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) =>
-                                          BookedResidentDetailesScreen(
-                                        index: index,
-                                        isSorted: true,
-                                      ),
-                                    ),
-                                  );
-                                },
-                              ),
-                            );
-                          }),
-                        ),
-                      ),
-                    ),
-              const SizedBox(
-                height: 33,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -406,8 +320,8 @@ class _DashBoardPageState extends State<DashBoardPage>
                                     Map<String, dynamic> pendingPayment =
                                         value.pendingPayments[index];
                                     return PendingPaymentCard(
-                                      roomNumber:
-                                          pendingPayment["RoomNo"].toString(),
+                                      roomNumber: pendingPayment["ApartmentNo"]
+                                          .toString(),
                                       date: DateFormat('dd MMM').format(
                                           pendingPayment["Residents"][0]
                                               .nextRentDate),

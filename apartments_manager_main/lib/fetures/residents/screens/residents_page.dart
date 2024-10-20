@@ -140,7 +140,7 @@ class _ResidentsPageState extends State<ResidentsPage> {
             showDialog(
               context: context,
               builder: (context) =>
-                  const AlertDialog(title: Text("No Vacant Rooms Available !")),
+                  const AlertDialog(title: Text("No Vacant Units Available !")),
             );
           } else {
             showModalBottomSheet(

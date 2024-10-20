@@ -31,7 +31,7 @@ class RoomsAddingForm extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        "Room No",
+                        "Apartment No",
                         style: TextStyleConstants.dashboardBookingName,
                       ),
                       const SizedBox(
@@ -74,7 +74,7 @@ class RoomsAddingForm extends StatelessWidget {
                   child: Column(
                     children: [
                       Text(
-                        "Capacity",
+                        "NoOfRooms",
                         style: TextStyleConstants.dashboardBookingName,
                       ),
                       const SizedBox(
@@ -225,7 +225,7 @@ class RoomsAddingForm extends StatelessWidget {
                       } else {
                         await userController.fetchData();
                         final currentNoOfCapacity =
-                            userController.user!.noOfBeds;
+                            userController.user!.noOfunits;
                         final currentNoOfVacany =
                             userController.user!.noOfVacancy;
 

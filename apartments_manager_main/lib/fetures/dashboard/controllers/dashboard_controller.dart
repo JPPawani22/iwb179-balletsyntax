@@ -122,7 +122,7 @@ class DashboardController with ChangeNotifier {
 
     // Convert the roomCountMap to the desired format
     List<Map<String, int>> result = roomCountMap.entries.map((entry) {
-      return {"RoomNo": entry.key, "Vacancy": entry.value};
+      return {"ApartmentNo": entry.key, "Vacancy": entry.value};
     }).toList();
 
     return result;
@@ -154,7 +154,7 @@ class DashboardController with ChangeNotifier {
       int totalAmount = roomModel.rent * residents.length;
       totalPentingAmount = totalPentingAmount + totalAmount;
       resultList.add({
-        "RoomNo": roomNo,
+        "ApartmentNo": roomNo,
         "Residents": residents,
         "TotalAmount": totalAmount,
       });

@@ -55,7 +55,7 @@ class PendingPaymentCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      "Room No $roomNumber",
+                      "Apartment No $roomNumber",
                       style: TextStyleConstants.dashboardBookingName,
                     ),
                     Row(

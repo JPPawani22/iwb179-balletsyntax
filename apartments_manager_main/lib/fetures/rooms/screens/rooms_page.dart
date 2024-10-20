@@ -35,7 +35,7 @@ class _OwnerRoomsPageState extends State<OwnerRoomsPage> {
       backgroundColor: ColorConstants.primaryWhiteColor,
       appBar: AppBar(
         title: Text(
-          "Rooms",
+          "Apartments",
           style: TextStyleConstants.homeMainTitle2,
         ),
         backgroundColor: ColorConstants.primaryWhiteColor,
@@ -69,7 +69,7 @@ class _OwnerRoomsPageState extends State<OwnerRoomsPage> {
                         Column(
                           children: [
                             Text(
-                              'Total Beds',
+                              'Total Units',
                               style: TextStyleConstants.ownerRoomsText2,
                             ),
                             const SizedBox(
@@ -80,7 +80,7 @@ class _OwnerRoomsPageState extends State<OwnerRoomsPage> {
                               backgroundColor:
                                   ColorConstants.roomsCircleAvatarColor,
                               child: Text(
-                                value.user?.noOfBeds.toString() ?? "0",
+                                value.user?.noOfunits.toString() ?? "0",
                                 style: TextStyleConstants
                                     .ownerRoomsCircleAvtarText,
                               ),
@@ -93,7 +93,7 @@ class _OwnerRoomsPageState extends State<OwnerRoomsPage> {
                         Column(
                           children: [
                             Text(
-                              'Total Beds vaccent',
+                              'Total BedRooms ',
                               style: TextStyleConstants.ownerRoomsText2,
                             ),
                             const SizedBox(
@@ -138,7 +138,7 @@ class _OwnerRoomsPageState extends State<OwnerRoomsPage> {
                     : value.rooms.isEmpty
                         ? const Column(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: [Text("No Rooms Added yet")],
+                            children: [Text("No Apartments Added yet")],
                           )
                         : GridView.builder(
                             itemCount: value.rooms.length,

@@ -37,11 +37,11 @@ class UserController with ChangeNotifier {
 
   fillForm() {
     nameController.text = user!.ownwerName;
-    hostelNameController.text = user!.hostelName;
+    hostelNameController.text = user!.apartmentName;
     emailController.text = user!.emailAddress;
     phoneNoController.text = user!.mobileNumber;
     addressController.text = user!.address;
-    roonNoController.text = user!.noOfRooms.toString();
+    roonNoController.text = user!.noOfunits.toString();
   }
   //----------------------------------------------------------------------------Update user data
 
@@ -49,14 +49,14 @@ class UserController with ChangeNotifier {
     try {
       final updatedUser = OwnerModel(
         id: user!.id,
-        hostelName: hostelNameController.text,
+        apartmentName: hostelNameController.text,
         address: addressController.text,
         emailAddress: emailController.text,
         mobileNumber: phoneNoController.text,
         ownwerName: nameController.text,
         profilePictuer: user!.profilePictuer,
-        noOfRooms: int.parse(roonNoController.text),
-        noOfBeds: user!.noOfBeds,
+        noOfunits: int.parse(roonNoController.text),
+        noOfBedRooms: user!.noOfBedRooms,
         noOfVacancy: user!.noOfVacancy,
         isAccountSetupCompleted: true,
       );

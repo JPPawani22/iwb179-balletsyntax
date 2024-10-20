@@ -33,8 +33,7 @@ class ConfirmLogoutDialog extends StatelessWidget {
         ),
         ElevatedButton(
           style: ButtonStyle(
-              backgroundColor:
-                  MaterialStatePropertyAll(ColorConstants.colorRed)),
+              backgroundColor: WidgetStatePropertyAll(ColorConstants.colorRed)),
           onPressed: () async {
             await GoogleSignIn().signOut();
             await FirebaseAuth.instance.signOut();

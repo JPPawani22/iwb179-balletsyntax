@@ -1,6 +1,5 @@
 import 'package:fluentui_system_icons/fluentui_system_icons.dart';
 import 'package:flutter/material.dart';
-import 'package:apartments_manager_main/commens/functions/make_phone_call.dart';
 import 'package:apartments_manager_main/fetures/bookings/controllers/bookings_controller.dart';
 import 'package:apartments_manager_main/fetures/residents/controllers/residents_controller.dart';
 import 'package:apartments_manager_main/fetures/bookings/models/booking_model.dart';
@@ -192,12 +191,6 @@ class BookedResidentDetailesScreen extends StatelessWidget {
                         Text(
                           detailes.phoneNo,
                           style: TextStyleConstants.dashboardBookingName,
-                        ),
-                        IconButton(
-                          onPressed: () {
-                            makePhoneCall(detailes.phoneNo, context);
-                          },
-                          icon: const Icon(Icons.call),
                         )
                       ],
                     ),

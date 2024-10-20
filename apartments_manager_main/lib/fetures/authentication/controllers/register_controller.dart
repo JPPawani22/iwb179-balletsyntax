@@ -140,8 +140,8 @@ class SignInController with ChangeNotifier {
   passwordValidation(value) {
     if (value == null || value.isEmpty) {
       return "Password is required.";
-    } else if (value.length < 6) {
-      return "Password must be atleast 6 character long";
+    } else if (value.length < 8) {
+      return "Password must be atleast 8 character long";
     } else {
       return null;
     }

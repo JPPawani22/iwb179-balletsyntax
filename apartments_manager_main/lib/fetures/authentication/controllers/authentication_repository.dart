@@ -30,14 +30,14 @@ class AuthenticationRepository extends ChangeNotifier {
 
       final newOwner = OwnerModel(
           id: userCredential.user!.uid,
-          hostelName: '',
+          apartmentName: '',
           address: '',
           emailAddress: email,
           mobileNumber: '',
           ownwerName: name,
           profilePictuer: '',
-          noOfRooms: 0,
-          noOfBeds: 0,
+          noOfunits: 0,
+          noOfBedRooms: 0,
           noOfVacancy: 0,
           isAccountSetupCompleted: false);
 
@@ -58,6 +58,7 @@ class AuthenticationRepository extends ChangeNotifier {
   }
 
 //------------------------------------------------------------------------------signin with google
+
   Future<String?> signInWithGoogle(BuildContext context) async {
     try {
       final GoogleSignInAccount? userAccount = await GoogleSignIn().signIn();
@@ -83,14 +84,14 @@ class AuthenticationRepository extends ChangeNotifier {
           // New user, save owner records
           final newOwner = OwnerModel(
             id: userId,
-            hostelName: '',
+            apartmentName: '',
             address: '',
             emailAddress: userCredentialGoogle.user!.email ?? "",
             mobileNumber: userCredentialGoogle.user!.phoneNumber ?? "",
             ownwerName: userCredentialGoogle.user!.displayName ?? "",
             profilePictuer: userCredentialGoogle.user!.photoURL ?? "",
-            noOfRooms: 0,
-            noOfBeds: 0,
+            noOfunits: 0,
+            noOfBedRooms: 0,
             noOfVacancy: 0,
             isAccountSetupCompleted: false,
           );

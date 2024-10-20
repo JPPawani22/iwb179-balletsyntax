@@ -42,8 +42,8 @@ class PendingPaymentsScreen extends StatelessWidget {
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     itemBuilder: (context, index) => PendingPaymentDetailesCard(
-                          roomNo:
-                              value.pendingPayments[index]["RoomNo"].toString(),
+                          roomNo: value.pendingPayments[index]["ApartmentNo"]
+                              .toString(),
                           residents: value.pendingPayments[index]["Residents"],
                           totalAmount: value.pendingPayments[index]
                               ["TotalAmount"],

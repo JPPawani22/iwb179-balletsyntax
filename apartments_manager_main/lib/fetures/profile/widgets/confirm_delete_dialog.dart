@@ -30,8 +30,7 @@ class ConfirmDeletDialog extends StatelessWidget {
         ),
         ElevatedButton(
           style: ButtonStyle(
-              backgroundColor:
-                  MaterialStatePropertyAll(ColorConstants.colorRed)),
+              backgroundColor: WidgetStatePropertyAll(ColorConstants.colorRed)),
           onPressed: () async {
             Provider.of<UserController>(context, listen: false)
                 .deleteUserAccount(context);

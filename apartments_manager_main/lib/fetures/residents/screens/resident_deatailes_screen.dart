@@ -2,7 +2,6 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:apartments_manager_main/commens/functions/make_phone_call.dart';
 import 'package:apartments_manager_main/fetures/residents/controllers/residents_controller.dart';
 import 'package:apartments_manager_main/fetures/residents/models/resident_model.dart';
 import 'package:apartments_manager_main/utils/color_constants.dart';
@@ -241,15 +240,6 @@ class _ResidentDetailesScreenState extends State<ResidentDetailesScreen> {
                           resident.phone,
                           style: TextStyleConstants.dashboardBookingName,
                         ),
-                        InkWell(
-                          onTap: () {
-                            makePhoneCall(resident!.phone, context);
-                          },
-                          child: const Icon(
-                            Icons.call,
-                            size: 28,
-                          ),
-                        )
                       ],
                     ),
                   ),
@@ -265,7 +255,7 @@ class _ResidentDetailesScreenState extends State<ResidentDetailesScreen> {
                     data: resident.address,
                   ),
                   DetailesCard(
-                    tiltle: 'Purpose of Stay',
+                    tiltle: 'Other',
                     data: resident.purposOfStay,
                   ),
                   const Text("Eemergency Contact Number"),
@@ -285,15 +275,6 @@ class _ResidentDetailesScreenState extends State<ResidentDetailesScreen> {
                           resident.emargencyContact,
                           style: TextStyleConstants.dashboardBookingName,
                         ),
-                        InkWell(
-                          onTap: () {
-                            makePhoneCall(resident!.emargencyContact, context);
-                          },
-                          child: const Icon(
-                            Icons.call,
-                            size: 28,
-                          ),
-                        )
                       ],
                     ),
                   ),

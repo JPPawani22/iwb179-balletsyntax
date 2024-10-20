@@ -34,8 +34,7 @@ class DeletDialog extends StatelessWidget {
         ),
         ElevatedButton(
           style: ButtonStyle(
-              backgroundColor:
-                  MaterialStatePropertyAll(ColorConstants.colorRed)),
+              backgroundColor: WidgetStatePropertyAll(ColorConstants.colorRed)),
           onPressed: () async {
             Provider.of<BookingsController>(context, listen: false)
                 .deleteBooking(

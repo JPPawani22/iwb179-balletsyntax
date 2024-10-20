@@ -21,11 +21,10 @@ class RoomsController with ChangeNotifier {
     {"Facility": "Attached Bathroom", "Image": ImageConstants.bathroomIcon},
   ];
   List<String> filters = [
-    "All Rooms",
-    "Vacant Rooms",
-    "Filled Rooms",
+    "All Apartments",
+    "Vacant Apartments",
   ];
-  String selctedFilter = "All Rooms";
+  String selctedFilter = "All Apartments";
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
   final roomNoController = TextEditingController();
@@ -206,7 +205,7 @@ class RoomsController with ChangeNotifier {
       userController.fetchData();
       Navigator.pop(context);
       ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("Room Added Successfull")));
+          const SnackBar(content: Text("Apartment Added Successfull")));
     } catch (e) {
       print(e.toString());
     }
@@ -229,7 +228,7 @@ class RoomsController with ChangeNotifier {
       int vacacy = currentVacancy - room.vacancy;
 
       await userRepoController
-          .accountSetup({"NoOfBeds": noOfBeds, "NoOfVacancy": vacacy});
+          .accountSetup({"NoOfBedRooms": noOfBeds, "NoOfVacancy": vacacy});
 
       if (room.residents.isEmpty) {
         await residentsRepository.deleteListOfResidents(room.residents);
@@ -257,11 +256,11 @@ class RoomsController with ChangeNotifier {
             context: context,
             builder: (context) => AlertDialog(
                   title: Text(
-                    "Can't Edit the Room",
+                    "Can't Edit the Apartment",
                     style: TextStyle(color: ColorConstants.colorRed),
                   ),
                   content: const Text(
-                      "This room has more occupents than the given capacity.change the capacity and try again!"),
+                      "This apartment has more occupents.  Try again!"),
                   actions: [
                     OutlinedButton(
                         onPressed: () {
@@ -293,7 +292,7 @@ class RoomsController with ChangeNotifier {
           int.parse(capacityController.text.trim()) - currentNoOfResidents!;
       final OwnerModel? owner = await userRepoController.fetchOwnerRecords();
       final currentHostelVacancy = owner!.noOfVacancy;
-      final currentHostelbeds = owner.noOfBeds;
+      final currentHostelbeds = owner.noOfunits;
       final int hostelVacancy =
           currentHostelVacancy - oldRoomVacancy! + roomVacancy;
 
@@ -301,8 +300,8 @@ class RoomsController with ChangeNotifier {
           oldRoomCapacity! +
           int.parse(capacityController.text);
 
-      await userRepoController
-          .accountSetup({"NoOfBeds": noOfBeds, "NoOfVacancy": hostelVacancy});
+      await userRepoController.accountSetup(
+          {"NoOfBedRooms": noOfBeds, "NoOfVacancy": hostelVacancy});
 
       if (oldRoomNo != int.parse(roomNoController.text)) {
         await residentsRepository.updateResidentsRoomNo(
@@ -326,7 +325,7 @@ class RoomsController with ChangeNotifier {
       fetchRoomsData();
       userController.fetchData();
       ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("Room Edited Successfully")));
+          const SnackBar(content: Text("Apartment Edited Successfully")));
       Navigator.pop(context);
 
       facilities = [];
@@ -341,7 +340,7 @@ class RoomsController with ChangeNotifier {
       notifyListeners();
       userController.fetchData();
     } catch (e) {
-      print("Somthing went wrong : $e");
+      print("Something went wrong : $e");
     }
   }
 
@@ -439,8 +438,6 @@ class RoomsController with ChangeNotifier {
       rooms = allRooms;
     } else if (selctedFilter == "Vacant Apartments") {
       rooms = allRooms.where((room) => room.vacancy > 0).toList();
-    } else if (selctedFilter == "Filled Apartments") {
-      rooms = allRooms.where((apartment) => apartment.vacancy == 0).toList();
     }
     isResidentLoading = false;
     notifyListeners();

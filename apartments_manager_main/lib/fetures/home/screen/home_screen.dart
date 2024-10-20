@@ -68,6 +68,15 @@ class HomeScreen extends StatelessWidget {
             ),
             label: 'Residents',
           ),
+          BottomNavigationBarItem(
+              icon: Icon(
+                navBarController.selectedIndex == 4
+                    ? FluentIcons.note_20_filled
+                    : FluentIcons.note_20_regular,
+                color: ColorConstants.primaryBlackColor,
+                size: 27,
+              ),
+              label: 'Announcements'),
         ],
       ),
     );

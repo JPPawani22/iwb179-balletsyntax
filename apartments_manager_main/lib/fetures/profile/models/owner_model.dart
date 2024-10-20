@@ -3,38 +3,38 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class OwnerModel {
   OwnerModel(
       {required this.id,
-      required this.hostelName,
+      required this.apartmentName,
       required this.address,
       required this.emailAddress,
       required this.mobileNumber,
       required this.ownwerName,
       required this.profilePictuer,
-      required this.noOfRooms,
-      required this.noOfBeds,
+      required this.noOfunits,
+      required this.noOfBedRooms,
       required this.noOfVacancy,
       required this.isAccountSetupCompleted});
   final String id;
   String ownwerName;
-  String hostelName;
+  String apartmentName;
   String address;
   final String emailAddress;
   final String mobileNumber;
   String profilePictuer;
-  final int noOfRooms;
-  final int noOfBeds;
+  final int noOfunits;
+  final int noOfBedRooms;
   final int noOfVacancy;
   final bool isAccountSetupCompleted;
 
   Map<String, dynamic> toJson() {
     return {
       'OwnerName': ownwerName,
-      'HostelName': hostelName,
-      'Address': hostelName,
+      'HostelName': apartmentName,
+      'Address': address,
       'EmailAddress': emailAddress,
       'MobileNumber': mobileNumber,
       'ProfilePictuer': profilePictuer,
-      'NoOfRooms': noOfRooms,
-      'NoOfBeds': noOfBeds,
+      'NoOfRooms': noOfunits,
+      'NoOfBeds': noOfBedRooms,
       'NoOfVacancy': noOfVacancy,
       'AccountSetupcompleted': isAccountSetupCompleted
     };
@@ -48,14 +48,14 @@ class OwnerModel {
       final data = document.data()!;
       return OwnerModel(
           id: document.id,
-          hostelName: data['HostelName'] ?? '',
+          apartmentName: data['ApartmentName'] ?? '',
           address: data['Address'] ?? '',
           emailAddress: data['EmailAddress'] ?? '',
           mobileNumber: data['MobileNumber'] ?? '',
           ownwerName: data['OwnerName'] ?? '',
           profilePictuer: data['ProfilePictuer'] ?? '',
-          noOfRooms: data['NoOfRooms'] ?? 0,
-          noOfBeds: data['NoOfBeds'] ?? 0,
+          noOfunits: data['NoOfUnits'] ?? 0,
+          noOfBedRooms: data['NoOfBedRooms'] ?? 0,
           noOfVacancy: data['NoOfVacancy'] ?? 0,
           isAccountSetupCompleted: data['AccountSetupcompleted'] ?? false);
     } else {
@@ -65,14 +65,14 @@ class OwnerModel {
 
   static OwnerModel empty() => OwnerModel(
       id: '',
-      hostelName: '',
+      apartmentName: '',
       address: '',
       emailAddress: '',
       mobileNumber: '',
       ownwerName: '',
       profilePictuer: '',
-      noOfRooms: 0,
-      noOfBeds: 0,
+      noOfunits: 0,
+      noOfBedRooms: 0,
       noOfVacancy: 0,
       isAccountSetupCompleted: false);
 }

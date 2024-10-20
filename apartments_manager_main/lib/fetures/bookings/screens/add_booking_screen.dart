@@ -72,7 +72,7 @@ class AddBookingScreen extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              "Room No",
+                              "Apartment No",
                               style: TextStyleConstants.ownerRoomNumber2,
                             ),
                             Text(

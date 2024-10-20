@@ -22,7 +22,7 @@ Future<void> main() async {
     options: const FirebaseOptions(
         apiKey: "AIzaSyBUW30KcgMfmfMr7z6irFLCz9G9Dcv9Amw",
         appId: "1:721358647180:android:8bba875f4f26ea2a8470a9",
-        messagingSenderId: '',
+        messagingSenderId: '721358647180',
         projectId: "hostel-management-app-4ae0f",
         storageBucket: "hostel-management-app-4ae0f.appspot.com"),
   );
@@ -79,6 +79,23 @@ class MyApp extends StatelessWidget {
       child: const MaterialApp(
         debugShowCheckedModeBanner: false,
         home: SplashScreen(),
+      ),
+    );
+  }
+}
+
+class AnnouncementScreen extends StatelessWidget {
+  const AnnouncementScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // Placeholder for fetching and displaying announcements
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Announcements'),
+      ),
+      body: Center(
+        child: Text('No announcements available.'),
       ),
     );
   }

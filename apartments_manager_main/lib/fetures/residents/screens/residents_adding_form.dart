@@ -76,7 +76,7 @@ class ResidentsAddingPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text("Room no :"),
+                  const Text("Apartment no :"),
                   Consumer<ResidentsController>(
                     builder: (context, value, child) => CustomDropdownButton(
                         selectedValue: controller.selectedRoom!,
@@ -103,7 +103,7 @@ class ResidentsAddingPage extends StatelessWidget {
               ),
               gap,
               const Text(
-                "Emaile",
+                "Email",
               ),
               gap,
               CustomFormField(
@@ -128,7 +128,7 @@ class ResidentsAddingPage extends StatelessWidget {
                 validator: (p0) => controller.fieldValidation(p0),
               ),
               gap,
-              const Text("Purpose of Stay"),
+              const Text("Other"),
               gap,
               CustomFormField(controller: controller.purposeController),
               gap,

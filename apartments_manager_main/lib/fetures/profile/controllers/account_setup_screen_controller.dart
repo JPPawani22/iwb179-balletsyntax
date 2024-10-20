@@ -29,7 +29,7 @@ class AccountSetUpScreenController with ChangeNotifier {
       }
     }
     final Map<String, dynamic> jason = {
-      'HostelName': hostelNameController.text,
+      'ApartmentName': hostelNameController.text,
       'Address': addressController.text,
       'MobileNumber': phoneNumberController.text,
       'ProfilePictuer': imageUrl ?? pro,

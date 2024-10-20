@@ -1,6 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:apartments_manager_main/commens/functions/make_phone_call.dart';
 import 'package:apartments_manager_main/utils/color_constants.dart';
 import 'package:apartments_manager_main/utils/text_style_constatnts.dart';
 import 'package:apartments_manager_main/commens/widgets/shimmer_loader.dart';
@@ -67,15 +66,6 @@ class ResidentsNameCard extends StatelessWidget {
                 ),
               ],
             ),
-            IconButton(
-              onPressed: () {
-                makePhoneCall(phoneNo, context);
-              },
-              icon: Icon(
-                Icons.call,
-                color: ColorConstants.primaryColor,
-              ),
-            )
           ],
         ),
       ),

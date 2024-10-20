@@ -37,8 +37,7 @@ class ConfirmDialog extends StatelessWidget {
         ),
         ElevatedButton(
           style: ButtonStyle(
-              backgroundColor:
-                  MaterialStatePropertyAll(ColorConstants.colorRed)),
+              backgroundColor: WidgetStatePropertyAll(ColorConstants.colorRed)),
           onPressed: onPressed,
           child: Text(button2Text!),
         ),

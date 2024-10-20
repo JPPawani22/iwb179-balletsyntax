@@ -121,7 +121,7 @@ class _RoomsViewScreenState extends State<RoomsViewScreen> {
                             ),
                             onTap: () async {
                               final currentNoOfCapacity =
-                                  userController.user!.noOfBeds;
+                                  userController.user!.noOfunits;
                               final currentNoOfVacancy =
                                   userController.user!.noOfVacancy;
 
@@ -159,9 +159,9 @@ class _RoomsViewScreenState extends State<RoomsViewScreen> {
                                 )),
                           ),
                           Hero(
-                            tag: "roomNo",
+                            tag: "apartmentNo",
                             child: Text(
-                              "Room No",
+                              "Apartment No",
                               style: TextStyleConstants.ownerRoomNumber2,
                             ),
                           ),
@@ -190,7 +190,7 @@ class _RoomsViewScreenState extends State<RoomsViewScreen> {
                                   backgroundColor:
                                       ColorConstants.bedCircleAvtarColor,
                                   child: FaIcon(
-                                    FontAwesomeIcons.indianRupeeSign,
+                                    FontAwesomeIcons.rupeeSign,
                                     color: ColorConstants.primaryBlackColor,
                                   ),
                                 ),
@@ -223,13 +223,13 @@ class _RoomsViewScreenState extends State<RoomsViewScreen> {
                                   backgroundColor:
                                       ColorConstants.bedCircleAvtarColor,
                                   child: Icon(
-                                    FluentIcons.bed_20_regular,
+                                    FluentIcons.home_12_regular,
                                     size: 29,
                                     color: ColorConstants.primaryBlackColor,
                                   ),
                                 ),
                                 Text(
-                                  "  Total Bed : ",
+                                  "  No of units : ",
                                   style: TextStyleConstants.ownerRoomsText2,
                                 ),
                                 Text(
@@ -253,13 +253,13 @@ class _RoomsViewScreenState extends State<RoomsViewScreen> {
                                   backgroundColor:
                                       ColorConstants.bedCircleAvtarColor,
                                   child: Icon(
-                                    FluentIcons.bed_20_regular,
+                                    FluentIcons.home_12_regular,
                                     size: 29,
                                     color: ColorConstants.primaryBlackColor,
                                   ),
                                 ),
                                 Text(
-                                  "  Vacant Bed : ",
+                                  "  Vacant units : ",
                                   style: TextStyleConstants.ownerRoomsText2,
                                 ),
                                 Text(

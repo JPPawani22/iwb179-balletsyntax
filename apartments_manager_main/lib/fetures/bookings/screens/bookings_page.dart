@@ -155,7 +155,7 @@ class _BookingsPageState extends State<BookingsPage> {
                   Column(
                     children: [
                       Text(
-                        'Total Beds vaccent',
+                        'Total Units vaccent',
                         style: TextStyleConstants.ownerRoomsText2,
                       ),
                       const SizedBox(

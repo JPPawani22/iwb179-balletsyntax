@@ -54,9 +54,9 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyBUW30KcgMfmfMr7z6irFLCz9G9Dcv9Amw',
-    appId: '1:555575013131:android:b3fe0b36c78264fd03bc0e',
+    appId: '1:721358647180:android:8bba875f4f26ea2a8470a9',
     messagingSenderId: '721358647180',
-    projectId: 'apartment-management-main',
-    storageBucket: 'apartment-management-main.appspot.com',
+    projectId: 'hostel-management-app-4ae0f',
+    storageBucket: 'hostel-management-app-4ae0f.appspot.com',
   );
 }

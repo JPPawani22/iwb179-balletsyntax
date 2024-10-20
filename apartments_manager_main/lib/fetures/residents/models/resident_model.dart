@@ -88,3 +88,23 @@ class ResidentModel {
       nextRentDate: DateTime(2000),
       isRentPaid: false);
 }
+
+Future<List<String>> fetchResidentEmails() async {
+  List<String> emails = [];
+
+  // Reference to the 'residents' collection
+  CollectionReference residentsCollection =
+      FirebaseFirestore.instance.collection('residents');
+
+  // Fetch the documents from the collection
+  QuerySnapshot<Map<String, dynamic>> snapshot =
+      await residentsCollection.get() as QuerySnapshot<Map<String, dynamic>>;
+
+  // Loop through each document and extract the email
+  for (var doc in snapshot.docs) {
+    ResidentModel resident = ResidentModel.fromDocumentSnapshot(doc);
+    emails.add(resident.email);
+  }
+
+  return emails;
+}

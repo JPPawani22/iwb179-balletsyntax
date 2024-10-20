@@ -9,7 +9,6 @@ import 'package:apartments_manager_main/fetures/profile/screens/profile_editing_
 import 'package:apartments_manager_main/fetures/profile/widgets/confirm_delete_dialog.dart';
 import 'package:apartments_manager_main/fetures/profile/widgets/confirm_logout_dialog.dart';
 import 'package:apartments_manager_main/fetures/profile/widgets/profile_detailes_card.dart';
-import 'package:apartments_manager_main/fetures/profile/widgets/room_no_card.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
@@ -159,8 +158,8 @@ class ProfileScreen extends StatelessWidget {
                   },
                   child: const Text("Change Profile Pic")),
               ProfileDetailesCard(
-                title: "",
-                data: controller.user!.hostelName,
+                title: "Apartment Name",
+                data: controller.user!.apartmentName,
               ),
               gap,
               ProfileDetailesCard(
@@ -177,17 +176,6 @@ class ProfileScreen extends StatelessWidget {
               ProfileDetailesCard(
                   title: "Email", data: controller.user!.emailAddress),
               gap,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  NumberCard(
-                      title: "No of Rooms",
-                      number: controller.user!.noOfRooms.toString()),
-                  NumberCard(
-                      title: "No of Beds",
-                      number: controller.user!.noOfBeds.toString())
-                ],
-              ),
             ],
           ),
         ),

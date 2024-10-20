@@ -19,7 +19,7 @@ class ApartmentModel {
 
   Map<String, dynamic> toJson() {
     return {
-      "RoomNo": apartmentNo,
+      "ApartmentNo": apartmentNo,
       "Capacity": capacity,
       "Vacancy": vacancy,
       "Rent": rent,
@@ -45,8 +45,8 @@ class ApartmentModel {
       final data = document.data()!;
       return ApartmentModel(
         id: document.id,
-        apartmentNo: data["RoomNo"] ?? 0,
-        capacity: data["Capacity"] ?? 0,
+        apartmentNo: data["ApartmentNo"] ?? 0,
+        capacity: data["Capacity: NoOfBedrooms"] ?? 0,
         vacancy: data['Vacancy'] ?? 0,
         rent: data['Rent'] ?? 0,
         residents:

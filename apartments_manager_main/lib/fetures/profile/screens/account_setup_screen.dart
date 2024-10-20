@@ -59,7 +59,7 @@ class _AccountSetupScreenState extends State<AccountSetupScreen> {
                     children: [
                       Center(
                         child: Text(
-                          "Set Up Your\nHostel",
+                          "Set Up Your\nApartment Complex",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: ColorConstants.primaryColor,
@@ -128,7 +128,7 @@ class _AccountSetupScreenState extends State<AccountSetupScreen> {
                         height: 20,
                       ),
                       Text(
-                        "Your Hostel Name",
+                        "Your Apartment Complex Name",
                         style: TextStyleConstants.dashboardBookingName,
                       ),
                       const SizedBox(
@@ -210,7 +210,7 @@ class _AccountSetupScreenState extends State<AccountSetupScreen> {
                         height: 20,
                       ),
                       Text(
-                        "Phone no",
+                        "Contact no",
                         style: TextStyleConstants.dashboardBookingName,
                       ),
                       const SizedBox(
@@ -253,7 +253,7 @@ class _AccountSetupScreenState extends State<AccountSetupScreen> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(
-                            "No of Roms :        ",
+                            "No of units in the apartment :        ",
                             style: TextStyleConstants.dashboardBookingName,
                           ),
                           SizedBox(

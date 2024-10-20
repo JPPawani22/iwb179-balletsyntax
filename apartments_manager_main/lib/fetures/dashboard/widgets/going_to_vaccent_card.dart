@@ -37,7 +37,7 @@ class GoingToVaccentCard extends StatelessWidget {
                 ),
               ),
               Text(
-                "Room No",
+                "Apartment No",
                 style: TextStyleConstants.upComingVaccencyText1,
               ),
               Text(

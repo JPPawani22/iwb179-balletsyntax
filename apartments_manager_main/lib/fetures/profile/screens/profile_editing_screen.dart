@@ -61,7 +61,7 @@ class _ProfileEdingScreenState extends State<ProfileEdingScreen> {
                     gap,
                     CustomFormField(
                       controller: controller.hostelNameController,
-                      labelText: 'Hostel Name',
+                      labelText: 'Apartment Complex Name',
                       validator: (p0) {
                         controller.fieldValidation(p0!);
                         return null;
@@ -79,7 +79,7 @@ class _ProfileEdingScreenState extends State<ProfileEdingScreen> {
                     gap,
                     CustomFormField(
                       controller: controller.phoneNoController,
-                      labelText: 'Phone No',
+                      labelText: 'Contact No',
                       validator: (p0) {
                         controller.fieldValidation(p0!);
                         return null;
@@ -116,7 +116,7 @@ class _ProfileEdingScreenState extends State<ProfileEdingScreen> {
                     gap,
                     CustomFormField(
                       controller: controller.roonNoController,
-                      labelText: 'No of Rooms',
+                      labelText: 'No of units',
                       validator: (p0) {
                         controller.fieldValidation(p0!);
                         return null;
