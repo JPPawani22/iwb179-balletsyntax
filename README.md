@@ -51,7 +51,7 @@ The **Servio - Apartment Management System** is designed to streamline and autom
 
 1. **Clone the repository**:
    
-   git clone https://github.com/your-repo/apartment-management-system.git
+   git clone https://github.com/JPPawani22/iwb179-balletsyntax.git
   
 
 2. **Navigate to the project folder**:
