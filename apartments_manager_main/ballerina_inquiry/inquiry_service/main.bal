@@ -6,15 +6,15 @@ import ballerina/firebase;
 mail:Sender mailSender = checkpanic mail:Sender {
     host: "smtp.gmail.com",
     port: 465,
-    user: "pawani02jp@gmail.com", //user email
-    password: "jrbhpucektsanxvc", //app password
+    user: "example@gmail.com", //user email
+    password: "apppasssword", //app password
     secureSocket: mail:SSL
 };
 
 // Firestore client
 firebase:Client firestoreClient = checkpanic firebase:createClient("hostel-management-app-4ae0f");
 
-// Service to handle announcements
+// Service to handle announcements, change the IP address according to the emulator using or for the web use localhost
 service /announcement on new http:Listener(8080) {
     
      // CORS configuration
